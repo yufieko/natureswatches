@@ -26,24 +26,26 @@ jobs:
           git config --local user.email "yufieko@gmail.com"
           git config --local user.name "yufieko"
           git add -A
+
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
           
-          arr[0]="last update: 🏔 changed"
-          arr[1]="last update: 😱 changed"
-          arr[2]="last update: 🏹 changed"
-          arr[3]="last update: 🌅 changed"
-          arr[4]="last update: 🙏 changed"
-          arr[5]="last update: 🙈 changed"
-          arr[6]="last update: 🎨 changed"
-          arr[7]="last update: 🚀 changed"
-          arr[8]="last update: 🌌 changed"
-          arr[9]="last update: 💪🏻 changed"
-          arr[10]="last update: 🌷 changed"
-          arr[11]="last update: 🌕 changed"
-          arr[12]="last update: 🍥 changed"
+          arr[0]="last update: 🏔"
+          arr[1]="last update: 😱"
+          arr[2]="last update: 🏹"
+          arr[3]="last update: 🌅"
+          arr[4]="last update: 🙏"
+          arr[5]="last update: 🙈"
+          arr[6]="last update: 🎨"
+          arr[7]="last update: 🚀"
+          arr[8]="last update: 🌌"
+          arr[9]="last update: 💪🏻"
+          arr[10]="last update: 🌷"
+          arr[11]="last update: 🌕"
+          arr[12]="last update: 🍥"
           
           rand=$[$RANDOM % ${#arr[@]}]
           
-          git commit -m "${arr[$rand]}"
+          git commit -m "${arr[$rand]} ${d}"
           
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.5.0
